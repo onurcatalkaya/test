@@ -4,44 +4,41 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bloom Studio Ekranı</title>
-    
     <meta http-equiv="refresh" content="900">
-
     <meta name="referrer" content="strict-origin-when-cross-origin" />
 
     <style>
-        /* Sayfa kenarlarındaki boşlukları siler, siyah yapar */
         body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
+            margin: 0; padding: 0; width: 100%; height: 100%;
             background-color: black;
-            overflow: hidden; /* Kaydırma çubuğunu gizle */
+            overflow: hidden; /* Taşan kısımları gizle */
         }
 
-        /* YouTube Iframe Ayarları (Tam Ekran) */
-        iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* YENİ KISIM BURASI */
+        .zoom-wrapper {
             width: 100%;
             height: 100%;
-            border: none; /* Kenarlığı kaldır */
-            pointer-events: none; /* Tıklamayı engeller, reklam panosu gibi olur */
+            /* Videoyu %20 büyütür ve ortalar */
+            transform: scale(1.2);
+            transform-origin: center center;
+        }
+
+        iframe {
+            width: 100%; height: 100%; border: none; pointer-events: none;
         }
     </style>
 </head>
 <body>
 
-    <iframe 
-        src="https://www.youtube-nocookie.com/embed?listType=playlist&list=PLzZZgpnEUWtrSTT1APL3Qla63Hc8Bmz6a&autoplay=1&controls=0&loop=1&mute=1&playsinline=1&enablejsapi=1" 
-        title="Bloom Studio TV+" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-    </iframe>
+    <div class="zoom-wrapper">
+        <iframe 
+            src="https://www.youtube-nocookie.com/embed?listType=playlist&list=PLzZZgpnEUWtrSTT1APL3Qla63Hc8Bmz6a&autoplay=1&controls=0&loop=1&mute=1&playsinline=1&enablejsapi=1" 
+            frameborder="0" 
+            allow="autoplay; encrypted-media" 
+            referrerpolicy="strict-origin-when-cross-origin" 
+            allowfullscreen>
+        </iframe>
+    </div>
 
 </body>
 </html>
